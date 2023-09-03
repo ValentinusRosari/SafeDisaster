@@ -3,11 +3,8 @@ SafeDisaster adalah aplikasi yang bertujuan untuk membantu masyarakat dalam meng
 
 Kelompok 5
 
-
 Ketua Kelompok:
 
-
 Anggota 1:
-
 
 Anggota 2:
