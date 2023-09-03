@@ -5,6 +5,6 @@ Kelompok 5
 
 Ketua Kelompok:
 
-Anggota 1:
+Anggota 1: Valentinus Wastu Rosari - 21/478174/TK/52692
 
 Anggota 2:
