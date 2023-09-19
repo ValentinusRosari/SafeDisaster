@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\SafeDisaster"
+    "\\SafeDisaster",
+    "\\SafeDisaster\\Class"
   ],
-  "SelectedNode": "\\SafeDisaster\\obj",
+  "SelectedNode": "\\SafeDisaster\\Class\\User.cs",
   "PreviewInSolutionExplorer": false
 }
