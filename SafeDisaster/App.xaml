@@ -2,8 +2,10 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:SafeDisaster"
-             StartupUri="MainWindow.xaml">
+             StartupUri="LoginPage.xaml">
     <Application.Resources>
-         
+        <Style TargetType="TextElement">
+            <Setter Property="FontFamily" Value="./Fonts/#Poppins-Regular" />
+        </Style>
     </Application.Resources>
 </Application>

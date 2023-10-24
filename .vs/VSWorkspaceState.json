@@ -2,8 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\SafeDisaster",
-    "\\SafeDisaster\\Class"
+    "\\SafeDisaster\\bin",
+    "\\SafeDisaster\\bin\\Debug",
+    "\\SafeDisaster\\bin\\Debug\\net6.0-windows",
+    "\\SafeDisaster\\bin\\Release",
+    "\\SafeDisaster\\Class",
+    "\\SafeDisaster\\obj"
   ],
-  "SelectedNode": "\\SafeDisaster\\Class\\User.cs",
+  "SelectedNode": "\\SafeDisaster",
   "PreviewInSolutionExplorer": false
 }

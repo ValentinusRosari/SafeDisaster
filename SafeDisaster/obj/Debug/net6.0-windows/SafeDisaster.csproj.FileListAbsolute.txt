@@ -1,9 +1,6 @@
 C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\obj\Debug\net6.0-windows\SafeDisaster.csproj.AssemblyReference.cache
-C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\obj\Debug\net6.0-windows\MainWindow.g.cs
 C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\obj\Debug\net6.0-windows\App.g.cs
 C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\obj\Debug\net6.0-windows\SafeDisaster_MarkupCompile.cache
-C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\obj\Debug\net6.0-windows\SafeDisaster_MarkupCompile.lref
-C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\obj\Debug\net6.0-windows\MainWindow.baml
 C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\obj\Debug\net6.0-windows\SafeDisaster.g.resources
 C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\obj\Debug\net6.0-windows\SafeDisaster.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\obj\Debug\net6.0-windows\SafeDisaster.AssemblyInfoInputs.cache
@@ -19,3 +16,13 @@ C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\bin\Debug\net6.0-windows\SafeDi
 C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\obj\Debug\net6.0-windows\SafeDisaster.dll
 C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\obj\Debug\net6.0-windows\SafeDisaster.genruntimeconfig.cache
 C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\obj\Debug\net6.0-windows\ref\SafeDisaster.dll
+C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\obj\Debug\net6.0-windows\LoginPage.baml
+C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\obj\Debug\net6.0-windows\LoginPage.g.cs
+C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\obj\Debug\net6.0-windows\SignUpPage.baml
+C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\obj\Debug\net6.0-windows\SignUpPage.g.cs
+C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\obj\Debug\net6.0-windows\SafeDisaster_MarkupCompile.lref
+C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\obj\Debug\net6.0-windows\App.baml
+C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\bin\Debug\net6.0-windows\WpfAnimatedGif.dll
+C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\obj\Debug\net6.0-windows\SafeDisaster.csproj.CopyComplete
+C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\obj\Debug\net6.0-windows\SafeDisaster_Content.g.cs
+C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
