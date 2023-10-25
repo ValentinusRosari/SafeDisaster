@@ -34,6 +34,8 @@ namespace SafeDisaster
             {
                 // Berhasil login, tambahkan logika navigasi atau tindakan lainnya di sini
                 MessageBox.Show("Sign In Success");
+                DashboardPage dashboardPage = new DashboardPage();
+                dashboardPage.Show();
                 this.Close();
             }
             else

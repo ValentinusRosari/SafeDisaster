@@ -57,7 +57,7 @@
         </Style>
     </Window.Resources>
 
-<Grid>
+<Grid Margin="0,4,0,-6" Height="450" Width="400">
     <Grid.Background>
         <ImageBrush ImageSource="/Assets/disasterImage.jpg" Opacity="0.75"/>
     </Grid.Background>

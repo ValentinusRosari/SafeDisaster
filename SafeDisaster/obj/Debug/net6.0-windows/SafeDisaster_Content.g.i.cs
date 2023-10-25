@@ -9,5 +9,7 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/disasterimage.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/disasterimage2.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/weathericon.png")]
 
 

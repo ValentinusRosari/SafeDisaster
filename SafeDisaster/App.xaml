@@ -7,5 +7,6 @@
         <Style TargetType="TextElement">
             <Setter Property="FontFamily" Value="./Fonts/#Poppins-Regular" />
         </Style>
+        <FontFamily x:Key="FontAwesome">/Fonts/fontawesome-webfont.ttf#FontAwesome</FontFamily>
     </Application.Resources>
 </Application>
