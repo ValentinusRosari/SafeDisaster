@@ -7,15 +7,39 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="ActionPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="DashboardPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="DisasterPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="SignUpPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WeatherPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="ActionPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DashboardPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DisasterPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="LoginPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="SignUpPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WeatherPage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

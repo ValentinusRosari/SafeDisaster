@@ -1,0 +1,65 @@
+﻿<Window x:Class="SafeDisaster.ActionPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="DashboardPage" Height="450" Width="400">
+
+    <Grid  Margin="0,4,0,-6" Height="450" Width="400">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/disasterImage2.jpg" Opacity="0.4"/>
+        </Grid.Background>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto" MinHeight="13"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" VerticalAlignment="Top" Background="DeepSkyBlue" Grid.ColumnSpan="3" Height="30">
+            <StackPanel Margin="5">
+                <TextBlock Text="SafeDisaster>>Action" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="18" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0" FontFamily="./Fonts/#Poppins-Regular"/>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Navigasi Bar -->
+        <StackPanel VerticalAlignment="Bottom" Background="LightGray" Grid.ColumnSpan="3" Grid.Row="2" Margin="0,0,0,43" Height="20">
+            <UniformGrid Columns="4" HorizontalAlignment="Stretch">
+                <Button Content="Dashboard" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" FontSize="15" Click="DashboardButton_Click"/>
+                <Button Content="Disaster" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" FontSize="15" Click="DisasterButton_Click"/>
+                <Button Content="Action" HorizontalAlignment="Center" Foreground="DeepSkyBlue" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" FontSize="15" />
+                <Button Content="Weather" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" FontSize="15" Click="WeatherButton_Click"/>
+            </UniformGrid>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="0" Grid.ColumnSpan="3" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Background="#80FFFFFF" Height="294" Margin="10,37,10,0" VerticalAlignment="Top">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Actions For Earthquake" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="Black" Margin="0 0 0 10"/>
+                        <TextBlock Text= "Instruksi ketika terjadi gempa bumi: Melindungi kepala dengan menggunakan bantal atau helm, atau berdirilah di bawah pintu. Berlindung di bawah meja untuk menghindari dari benda-benda yang dimungkinkan akan jatuh seperti atap atau benda berbahaya lainnya. Bila keluar rumah, perhatikan kemungkinan pecahan kaca, genteng atau material lain. Tetap lindungi kepala anda dan segera menuju ke lapangan terbuka. Jangan berdiri di dekat tiang, pohon atau sumber listrik atau gedung yang mungkin roboh.  Kenali bagian bangunan gedung atau rumah yang memiliki struktur kuat, seperti pada sudut bangunan untuk berlindung. Ikuti instruksi evakuasi dari pengelola, penjaga, atau petugas yang berwenang. Pilihlah menggunakan tangga darurat untuk melakukan evakuasi keluar bangunan. Apabila sedang berada di dalam elevator, tekan semua tombol atau gunakan interphone untuk melakukan panggilan kepada pengelola gedung.
+ " VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Background="#80FFFFFF" Height="294" Margin="10,37,10,0" VerticalAlignment="Top">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Actions For Flood" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="Black" Margin="0 0 0 10"/>
+                        <TextBlock Text= "Instruksi ketika terjadi banjir: Melakukan evakuasi diri dan keluarga ke tempat yang lebih tinggi atau lebih aman. Menyiapkan peralatan yang diperlukan selama evakuasi, seperti senter, korek api, alat penerangan dan peralatan darurat lainnya. Menyiapkan makanan kering atau instan. Menggunakan sepatu boot dan sarung tangan. Menyiapkan berbagai macam obat-obatan yang diperlukan untuk melakukan pertolongan pertama." VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Background="#80FFFFFF" Height="294" Margin="10,37,10,0" VerticalAlignment="Top">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Actions For Wild Fire" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="Black" Margin="0 0 0 10"/>
+                        <TextBlock Text= "Instruksi ketika terjadi kebakaran: Segera dapatkan alat pemadam api. Beritahu orang sekitar. Tinggalkan barang berharga jika tidak bisa lagi diselamatkan. Cari tempat evakuasi yang aman. Segera hubungi petugas pemadam kebakaran" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</Window>
