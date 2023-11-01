@@ -35,37 +35,20 @@ namespace SafeDisaster
 
         private void SignUpButton_Click(object sender, RoutedEventArgs e)
         {
+            Class.User user = new Class.User();
+            user.SignUp(txtSignUpUsername.Text, txtSignUpEmail.Text, txtSignUpPhoneNumber.Text, txtSignUpPassword.Password, this);
+        }
+
+        private void SignUpPage_Load(object sender, RoutedEventArgs e)
+        {
             try
             {
-                DatabaseConnection.OpenConnection();
-                Console.WriteLine("Connected to database");
-
-                string query = @"SELECT * from user_insert(:_name, :_email, :_phone_no, :_password)";
-
-                NpgsqlCommand command = new NpgsqlCommand(query, DatabaseConnection.GetConnection());
-                command.Parameters.AddWithValue("_name", txtSignUpUsername.Text);
-                command.Parameters.AddWithValue("_email", txtSignUpEmail.Text);
-                command.Parameters.AddWithValue("_phone_no", txtSignUpPhoneNumber.Text);
-                command.Parameters.AddWithValue("_password", txtSignUpPassword.Password);
-                if ((int)command.ExecuteScalar() == 1)
-                {
-                    MessageBox.Show("Register Success");
-                    DashboardPage dashboardPage = new DashboardPage();
-                    this.Close();
-                    dashboardPage.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Register Failed, You are Already Have an Account");
-                }
+                DatabaseConnection databaseConnection = new DatabaseConnection();
+                Console.WriteLine("Database connect success");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                DatabaseConnection.CloseConnection();
+                Console.WriteLine("Error: " + ex.Message);
             }
         }
     }
