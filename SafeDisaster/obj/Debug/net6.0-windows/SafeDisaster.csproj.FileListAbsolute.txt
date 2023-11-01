@@ -36,3 +36,5 @@ C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\obj\Debug\net6.0-windows\Weathe
 C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\bin\Debug\net6.0-windows\Assets\disasterImage.jpg
 C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\bin\Debug\net6.0-windows\Assets\disasterImage2.jpg
 C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\bin\Debug\net6.0-windows\Assets\weatherIcon.png
+C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\bin\Debug\net6.0-windows\Npgsql.dll

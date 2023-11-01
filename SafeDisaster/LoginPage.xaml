@@ -1,7 +1,7 @@
 ﻿<Window x:Class="SafeDisaster.LoginPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Login" Height="450" Width="400">
+        Title="Login" Height="450" Width="400" Loaded="LoginPage_Load">
     <Window.Resources>
         <!-- Gaya tombol -->
         <Style TargetType="Button">
@@ -57,28 +57,28 @@
         </Style>
     </Window.Resources>
 
-<Grid Margin="0,4,0,-6" Height="450" Width="400">
-    <Grid.Background>
-        <ImageBrush ImageSource="/Assets/disasterImage.jpg" Opacity="0.75"/>
-    </Grid.Background>
+    <Grid Margin="0,4,0,0" Height="450" Width="400" VerticalAlignment="Top">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/disasterImage.jpg" Opacity="0.75"/>
+        </Grid.Background>
 
-    <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="*"/>
-        <ColumnDefinition Width="2*"/>
-        <ColumnDefinition Width="*"/>
-    </Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-    <Grid.RowDefinitions>
-        <RowDefinition Height="*"/>
-        <RowDefinition Height="Auto"/>
-    </Grid.RowDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
-    <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Background="#80FFFFFF">
+        <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Background="#80FFFFFF">
             <StackPanel Margin="15">
                 <TextBlock Text="Sign In" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Foreground="Black" Margin="0 0 0 10" FontFamily="./Fonts/#Poppins-Regular"/>
                 <StackPanel Margin="0 0 0 0">
                     <Label Content="Username" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black" FontFamily="./Fonts/#Poppins-Regular"/>
-                    <TextBox Style="{StaticResource RoundedTextBoxStyle}" Name="txtUsername"/>
+                    <TextBox Style="{StaticResource RoundedTextBoxStyle}" Name="txtUsernameOrEmail"/>
                 </StackPanel>
                 <StackPanel Margin="0 0 0 10">
                     <Label Content="Password" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black"/>

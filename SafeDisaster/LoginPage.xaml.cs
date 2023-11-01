@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Npgsql;
 
 namespace SafeDisaster
 {
@@ -26,22 +27,35 @@ namespace SafeDisaster
         }
         private void SignInButton_Click(object sender, RoutedEventArgs e)
         {
-            string username = txtUsername.Text;
-            string password = txtPassword.Password;
+            try
+            {
+                DatabaseConnection.OpenConnection();
+                Console.WriteLine("Connected to database");
 
-            // Lakukan validasi kredensial (contoh: username=admin, password=admin)
-            if (username == "admin" && password == "admin")
-            {
-                // Berhasil login, tambahkan logika navigasi atau tindakan lainnya di sini
-                MessageBox.Show("Sign In Success");
-                DashboardPage dashboardPage = new DashboardPage();
-                dashboardPage.Show();
-                this.Close();
+                string query = @"SELECT * from users_check(:_username_or_email, :_password)";
+
+                NpgsqlCommand command = new NpgsqlCommand(query, DatabaseConnection.GetConnection());
+                command.Parameters.AddWithValue("_username_or_email", txtUsernameOrEmail.Text);
+                command.Parameters.AddWithValue("_password", txtPassword.Password);
+                if ((int)command.ExecuteScalar() == 1)
+                {
+                    MessageBox.Show("Login Success");
+                    DashboardPage dashboardPage = new DashboardPage();
+                    this.Close();
+                    dashboardPage.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Login Failed, Please Sign Up First");
+                }
             }
-            else
+            catch(Exception ex)
             {
-                // Gagal login, tampilkan pesan kesalahan
-                MessageBox.Show("Sign In Failed. Try Again.");
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                DatabaseConnection.CloseConnection();
             }
         }
 
@@ -51,7 +65,18 @@ namespace SafeDisaster
             signUpPage.Show();
             this.Close();
         }
-      
 
+        private void LoginPage_Load(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                DatabaseConnection databaseConnection = new DatabaseConnection();
+                Console.WriteLine("Database connect success");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+        }
     }
 }

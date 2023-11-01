@@ -22,22 +22,26 @@
         </Grid.RowDefinitions>
 
 
-        <StackPanel Grid.Row="0" VerticalAlignment="Top" Background="DeepSkyBlue" Grid.ColumnSpan="3" Height="30">
+        <StackPanel Grid.Row="0" VerticalAlignment="Top" Background="Transparent" Grid.ColumnSpan="3" Height="30">
             <StackPanel Margin="5">
-                <TextBlock Text="SafeDisaster>>Dashboard" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="18" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0" FontFamily="./Fonts/#Poppins-Regular"/>
+                <TextBlock Text="Dashboard" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0" FontFamily="./Fonts/#Poppins-Regular"/>
             </StackPanel>
         </StackPanel>
-        <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Background="#80FFFFFF" Height="100" Margin="10,65,25,0" VerticalAlignment="Top">
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Background="#80FFFFFF" Height="100" Margin="10,53,25,0" VerticalAlignment="Top">
             <StackPanel Margin="5">
                 <TextBlock Text="Today's Weather" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="Black" Margin="0 0 0 10"/>
-                <TextBlock Text="Today: Sunny, 25°C" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
+                <TextBlock Text="Today: Sunny, 30°C" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
                 <TextBlock Text="Humidity: 55% " VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
                 <TextBlock Text="Wind Velocity: 20 km/h" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
                 <TextBlock Text="Last Updated: 10 September 2023, 12:00:00" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
             </StackPanel>
         </StackPanel>
-        <Grid Grid.Column="2" Grid.Row="0" VerticalAlignment="Top" Margin="0,81,0,0">
-            <Image Source="/Assets/weatherIcon.png" Width="75" Height="74" VerticalAlignment="Center" Margin="10,0,15,0" />
+        <Grid Grid.Column="2" Grid.Row="0" VerticalAlignment="Top" Margin="0,67,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="61*"/>
+                <RowDefinition Height="13*"/>
+            </Grid.RowDefinitions>
+            <Image Source="/Assets/weatherIcon.png" Width="75" Height="74" VerticalAlignment="Top" Margin="1,0,24,0" Grid.RowSpan="2" />
         </Grid>
         <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Background="#80FFFFFF" Height="140" Margin="10,203,10,0" VerticalAlignment="Top">
             <StackPanel Margin="5">
