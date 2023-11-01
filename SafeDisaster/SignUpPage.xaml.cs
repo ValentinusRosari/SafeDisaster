@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,11 +24,49 @@ namespace SafeDisaster
         {
             InitializeComponent();
         }
+
+
         private void SignInButton_Click(object sender, RoutedEventArgs e)
         {
             LoginPage loginPage = new LoginPage();
             loginPage.Show();
             this.Close();
+        }
+
+        private void SignUpButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                DatabaseConnection.OpenConnection();
+                Console.WriteLine("Connected to database");
+
+                string query = @"SELECT * from user_insert(:_name, :_email, :_phone_no, :_password)";
+
+                NpgsqlCommand command = new NpgsqlCommand(query, DatabaseConnection.GetConnection());
+                command.Parameters.AddWithValue("_name", txtSignUpUsername.Text);
+                command.Parameters.AddWithValue("_email", txtSignUpEmail.Text);
+                command.Parameters.AddWithValue("_phone_no", txtSignUpPhoneNumber.Text);
+                command.Parameters.AddWithValue("_password", txtSignUpPassword.Password);
+                if ((int)command.ExecuteScalar() == 1)
+                {
+                    MessageBox.Show("Register Success");
+                    DashboardPage dashboardPage = new DashboardPage();
+                    this.Close();
+                    dashboardPage.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Register Failed, You are Already Have an Account");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                DatabaseConnection.CloseConnection();
+            }
         }
     }
 }

@@ -88,7 +88,7 @@
                     <Label Content="Password" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black"/>
                     <PasswordBox Style="{StaticResource RoundedPasswordBoxStyle}" Name="txtSignUpPassword"/>
                 </StackPanel>
-                <Button Content="Sign Up" HorizontalAlignment="Center" Width="175" Margin="0 1 0 0"/>
+                <Button Content="Sign Up" HorizontalAlignment="Center" Width="175" Margin="0 1 0 0" Click="SignUpButton_Click"/>
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0 5 0 0">
                     <Label Content="Already have an account?" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#7D7C7C" FontSize="10"/>
                     <Button Content="Sign In" Width="175" Margin="0 0 0 0" Click="SignInButton_Click"/>
