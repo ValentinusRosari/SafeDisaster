@@ -27,37 +27,10 @@ namespace SafeDisaster
         }
         private void SignInButton_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                DatabaseConnection.OpenConnection();
-                Console.WriteLine("Connected to database");
-
-                string query = @"SELECT * from users_check(:_username_or_email, :_password)";
-
-                NpgsqlCommand command = new NpgsqlCommand(query, DatabaseConnection.GetConnection());
-                command.Parameters.AddWithValue("_username_or_email", txtUsernameOrEmail.Text);
-                command.Parameters.AddWithValue("_password", txtPassword.Password);
-                if ((int)command.ExecuteScalar() == 1)
-                {
-                    MessageBox.Show("Login Success");
-                    DashboardPage dashboardPage = new DashboardPage();
-                    this.Close();
-                    dashboardPage.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Login Failed, Please Sign Up First");
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                DatabaseConnection.CloseConnection();
-            }
+            Class.User user = new Class.User();
+            user.Login(txtUsernameOrEmail.Text, txtPassword.Password, this);
         }
+
 
         private void SignUpButton_Click(object sender, RoutedEventArgs e)
         {

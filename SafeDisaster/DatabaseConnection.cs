@@ -11,6 +11,7 @@ namespace SafeDisaster
     {
         private static NpgsqlConnection connection;
         private static string connectionString = "Host=localhost;Username=postgres;Password=duta2711;Database=JunPro";
+
         static DatabaseConnection()
         {
             connection = new NpgsqlConnection(connectionString);
