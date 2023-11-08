@@ -37,7 +37,7 @@ namespace SafeDisaster.Class
             get { return _phoneNumber; }
             set { _phoneNumber = value; }
         }
-        public string Password
+        private string Password
         {
             get { return _password; }
             set { _password = value; }
