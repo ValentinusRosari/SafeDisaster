@@ -24,38 +24,25 @@
 
         <StackPanel Grid.Row="0" VerticalAlignment="Top" Background="Transparent" Grid.ColumnSpan="3" Height="30">
             <StackPanel Margin="5">
-                <TextBlock Text="Disaster" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0" FontFamily="./Fonts/#Poppins-Regular"/>
+                <TextBlock Text="Disaster(Earthquake)" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0" FontFamily="./Fonts/#Poppins-Regular"/>
             </StackPanel>
         </StackPanel>
-        <StackPanel Margin="10,0,10,304" Grid.ColumnSpan="3">
-            <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Background="#80FFFFFF" Height="83" Margin="10,37,10,0" Grid.Column="1" Width="275" HorizontalAlignment="Right">
-                <TextBlock Text="Type: Earthquake" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="5 0 0 0"/>
-                <TextBlock Text="Loc: 85 km, Southeast Gunung Kidul " VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="5 0 0 0"/>
-                <TextBlock Text="Depth: 26 km" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="5 0 0 0"/>
-                <TextBlock Text="Time: 24 October 2023, 05:47:56" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="5 0 0 0"/>
-                <Button Content="Action" HorizontalAlignment="Left" Foreground="DeepSkyBlue" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" FontSize="12" FontWeight="Bold" Click="ActionButton_Click"/>
-            </StackPanel>
-            <Grid Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" Margin="0,81,0,0">
-                <TextBlock Text="5" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="26,-181,0,0"  FontWeight="Bold" FontSize="75" Height="109"/>
-            </Grid>
+        <StackPanel Margin="0,34,0,0" Grid.ColumnSpan="3">
+            <ListView x:Name="disasterListView" Loaded="OnListViewLoaded" VirtualizingStackPanel.IsVirtualizing="False">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Tanggal" DisplayMemberBinding="{Binding Tanggal}" Width="Auto"/>
+                        <GridViewColumn Header="Jam" DisplayMemberBinding="{Binding Jam}" Width="60"/>
+                        <GridViewColumn Header="Magnitude" DisplayMemberBinding="{Binding Magnitude}" Width="Auto"/>
+                        <GridViewColumn Header="Kedalaman" DisplayMemberBinding="{Binding Kedalaman}" Width="Auto"/>
+                        <GridViewColumn Header="Wilayah" DisplayMemberBinding="{Binding Wilayah}" Width="Auto"/>
+                        <GridViewColumn Header="Potensi" DisplayMemberBinding="{Binding Potensi}" Width="Auto"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </StackPanel>
 
-        <StackPanel Margin="10,125,10,179" Grid.ColumnSpan="3">
-            <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Background="#80FFFFFF" Height="83" Margin="10,37,10,0" Grid.Column="1" Width="275" HorizontalAlignment="Right">
-                <TextBlock Text="Type: Earthquake" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="5 0 0 0"/>
-                <TextBlock Text="Loc: Celebes Sea " VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="5 0 0 0"/>
-                <TextBlock Text="Depth: 10 km" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="5 0 0 0"/>
-                <TextBlock Text="Time: 23 October 2023, 15:47:56" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="5 0 0 0"/>
-                <Button Content="Action" HorizontalAlignment="Left" Foreground="DeepSkyBlue" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" FontSize="12" FontWeight="Bold" Click="ActionButton_Click"/>
-            </StackPanel>
-            <Grid Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" Margin="0,81,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="9*"/>
-                    <ColumnDefinition Width="67*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Text="3" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="26,-181,0,0"  FontWeight="Bold" FontSize="75" Height="109" Grid.ColumnSpan="2"/>
-            </Grid>
-        </StackPanel>
+        
 
         <StackPanel VerticalAlignment="Bottom" Background="LightGray" Grid.ColumnSpan="3" Margin="0,0,0,31" Height="20">
             <UniformGrid Columns="4" HorizontalAlignment="Stretch" >
@@ -65,17 +52,6 @@
                 <Button Content="Weather" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" FontSize="15" Click="WeatherButton_Click"/>
             </UniformGrid>
         </StackPanel>
-        <StackPanel Margin="10,243,10,61" Grid.ColumnSpan="3">
-            <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Background="#80FFFFFF" Height="83" Margin="10,37,10,0" Grid.Column="1" Width="275" HorizontalAlignment="Right">
-                <TextBlock Text="Type: Earthquake" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="5 0 0 0"/>
-                <TextBlock Text="Loc: Southern Sumatra " VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="5 0 0 0"/>
-                <TextBlock Text="Depth: 15 km" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="5 0 0 0"/>
-                <TextBlock Text="Time: 23 October 2023, 15:10:00" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="5 0 0 0"/>
-                <Button Content="Action" HorizontalAlignment="Left" Foreground="DeepSkyBlue" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" FontSize="12" FontWeight="Bold" Click="ActionButton_Click"/>
-            </StackPanel>
-            <Grid Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" Margin="0,81,0,0">
-                <TextBlock Text="3" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="26,-181,0,0"  FontWeight="Bold" FontSize="75" Height="109"/>
-            </Grid>
-        </StackPanel>
+       
     </Grid>
 </Window>

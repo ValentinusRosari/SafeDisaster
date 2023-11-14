@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SafeDisaster.Class;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +24,10 @@ namespace SafeDisaster
         public DisasterPage()
         {
             InitializeComponent();
+            List<Disaster> listDisaster = Disaster.GetDisasterList();
+            disasterListView.ItemsSource = listDisaster;
         }
+
         private void DashboardButton_Click(object sender, RoutedEventArgs e)
         {
             DashboardPage dashboardPage = new DashboardPage();
@@ -40,6 +45,23 @@ namespace SafeDisaster
             WeatherPage weatherPage = new WeatherPage();
             weatherPage.Show();
             this.Close();
+        }
+        private void OnListViewLoaded(object sender, RoutedEventArgs e)
+        {
+            AdjustColumnWidths();
+        }
+
+        private void AdjustColumnWidths()
+        {
+            if (disasterListView.View is GridView gridView)
+            {
+                foreach (var column in gridView.Columns)
+                {
+                    // Set lebar kolom berdasarkan isi kontennya
+                    column.Width = column.ActualWidth;
+                    column.Width = double.NaN;
+                }
+            }
         }
     }
 }

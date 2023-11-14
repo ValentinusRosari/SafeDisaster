@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SafeDisaster.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace SafeDisaster
         public DashboardPage()
         {
             InitializeComponent();
+            LoadEarthquakeData();
         }
 
         private void DisasterButton_Click(object sender, RoutedEventArgs e)
@@ -41,6 +43,25 @@ namespace SafeDisaster
             WeatherPage weatherPage = new WeatherPage();
             weatherPage.Show();
             this.Close();
+        }
+        private void LoadEarthquakeData()
+        {
+            try
+            {
+                Disaster newestDisaster = Disaster.GetNewestDisaster();
+
+                // Menetapkan nilai TextBlock
+                tanggalTextBlock.Text = $"Tanggal: {newestDisaster.Tanggal}";
+                jamTextBlock.Text = $"Jam: {newestDisaster.Jam}";
+                magnitudeTextBlock.Text = $"Magnitude: {newestDisaster.Magnitude}";
+                kedalamanTextBlock.Text = $"Kedalaman: {newestDisaster.Kedalaman}";
+                wilayahTextBlock.Text = $"Wilayah: {newestDisaster.Wilayah}";
+                potensiTextBlock.Text = $"Potensi: {newestDisaster.Potensi}";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
         }
     }
 }
