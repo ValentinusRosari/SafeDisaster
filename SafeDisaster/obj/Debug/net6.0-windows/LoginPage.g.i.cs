@@ -68,7 +68,7 @@ namespace SafeDisaster {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SafeDisaster;V1.0.0.0;component/loginpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SafeDisaster;component/loginpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\LoginPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
