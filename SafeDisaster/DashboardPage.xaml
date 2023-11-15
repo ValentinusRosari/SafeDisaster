@@ -43,16 +43,15 @@
             </Grid.RowDefinitions>
             <Image Source="/Assets/weatherIcon.png" Width="75" Height="74" VerticalAlignment="Top" Margin="1,0,24,0" Grid.RowSpan="2" />
         </Grid>
-        <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Background="#80FFFFFF" Height="140" Margin="10,203,10,0" VerticalAlignment="Top">
-            <StackPanel Margin="5">
-                <TextBlock Text="Newest Disaster Information" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="Black" Margin="0 0 0 10"/>
-                <TextBlock Text="Type: Earthquake" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
-                <TextBlock Text="Loc: 85 km, Southeast Gunung Kidul " VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
-                <TextBlock Text="Magnitude: 5" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
-                <TextBlock Text="Depth: 26 km" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
-                <TextBlock Text="Time: 24 October 2023, 05:47:56" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
-                <Button Content="Action" HorizontalAlignment="Left" Foreground="DeepSkyBlue" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" FontSize="12" FontWeight="Bold" Click="ActionButton_Click"/>
-            </StackPanel>
+        <StackPanel Grid.Row="0" Background="#80FFFFFF" Margin="50,202,50,66" Grid.ColumnSpan="3">
+            <TextBlock Text="Newest Earthquake Information" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="Black" Margin="0,0,0,10"/>
+
+            <TextBlock x:Name="tanggalTextBlock" FontSize="12" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBlock x:Name="jamTextBlock" FontSize="12" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBlock x:Name="magnitudeTextBlock" FontSize="12" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBlock x:Name="kedalamanTextBlock" FontSize="12" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBlock x:Name="wilayahTextBlock" FontSize="12" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBlock x:Name="potensiTextBlock" FontSize="12" FontWeight="Bold" Margin="0,0,0,5"/>
         </StackPanel>
         <StackPanel VerticalAlignment="Bottom" Background="LightGray" Grid.ColumnSpan="3" Margin="0,0,0,31" Height="20">
             <UniformGrid Columns="4" HorizontalAlignment="Stretch" >

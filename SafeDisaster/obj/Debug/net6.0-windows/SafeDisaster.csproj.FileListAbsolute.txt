@@ -38,3 +38,5 @@ C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\bin\Debug\net6.0-windows\Assets
 C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\bin\Debug\net6.0-windows\Assets\weatherIcon.png
 C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\bin\Debug\net6.0-windows\Npgsql.dll
+C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\bin\Debug\net6.0-windows\RestSharp.dll

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\Junior Project\SafeDisaster\SafeDisaster\obj\Debug\net6.0-windows\
+C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\obj\Debug\net6.0-windows\
 SafeDisaster
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-E:\Junior Project\SafeDisaster\SafeDisaster\App.xaml
+C:\Users\Duta Ramadhan\SafeDisaster\SafeDisaster\App.xaml
 61212100004
 31879378158
 13603977849
-194-1325968647
+19981502981
 ActionPage.xaml;DashboardPage.xaml;DisasterPage.xaml;LoginPage.xaml;SignUpPage.xaml;WeatherPage.xaml;
 
-True
+False
 

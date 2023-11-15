@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "1NgViGeSqvaIW5e9hzVuQHtQ5qtAPebQ95yzDayZ/j+dIcevhfk0C1R8b+uBQ48i1aXnNOpvm7YQj2Psu/LEbQ==",
+  "dgSpecHash": "OPI0zvtet/hXuJ2qITR3nsudtU47I5cHi0KJXWq5kT6GZ/y3F+2Nkt2LcfDtpd+z46FEn3DlxKIlOtJ/dHlhLw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Duta Ramadhan\\SafeDisaster\\SafeDisaster\\SafeDisaster.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Duta Ramadhan\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Duta Ramadhan\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Duta Ramadhan\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512",
+    "C:\\Users\\Duta Ramadhan\\.nuget\\packages\\restsharp\\106.11.4\\restsharp.106.11.4.nupkg.sha512",
     "C:\\Users\\Duta Ramadhan\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\Duta Ramadhan\\.nuget\\packages\\wpfanimatedgif\\2.0.2\\wpfanimatedgif.2.0.2.nupkg.sha512"
   ],
