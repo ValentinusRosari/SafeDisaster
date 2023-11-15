@@ -27,13 +27,48 @@
                 <TextBlock Text="Dashboard" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0" FontFamily="./Fonts/#Poppins-Regular"/>
             </StackPanel>
         </StackPanel>
-        <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Background="#80FFFFFF" Height="100" Margin="10,53,25,0" VerticalAlignment="Top">
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Background="#80FFFFFF" Height="196" Margin="10,39,25,0" VerticalAlignment="Top">
             <StackPanel Margin="5">
                 <TextBlock Text="Today's Weather" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="Black" Margin="0 0 0 10"/>
-                <TextBlock Text="Today: Sunny, 30°C" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
-                <TextBlock Text="Humidity: 55% " VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
-                <TextBlock Text="Wind Velocity: 20 km/h" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
-                <TextBlock Text="Last Updated: 10 September 2023, 12:00:00" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
+                <StackPanel Margin="6,0,10,-21" Grid.RowSpan="2" Grid.ColumnSpan="2">
+                    <TextBlock Text="Masukan kota" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" Foreground="Black" Margin="3 0 0 0" FontFamily="./Fonts/#Poppins-Regular"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="28.2"/>
+                            <ColumnDefinition Width="101.8"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <ComboBox HorizontalAlignment="Left" Name="cmbLocation" Width="130" IsEditable="True" IsTextSearchEnabled="True" StaysOpenOnEdit="True" DropDownOpened="cmbLocation_DropDownOpened" Grid.ColumnSpan="2">
+                            <ComboBox.Template>
+                                <ControlTemplate TargetType="ComboBox">
+                                    <TextBox x:Name="PART_EditableTextBox"
+                     Text="{Binding Path=Text, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     IsReadOnly="{TemplateBinding IsReadOnly}"
+                     AcceptsReturn="True"
+                     Focusable="True"
+                     Background="{TemplateBinding Background}"
+                     Foreground="{TemplateBinding Foreground}"
+                     />
+                                </ControlTemplate>
+                            </ComboBox.Template>
+                        </ComboBox>
+                        <Button Content="Search" Height="18" Width="45" Grid.Column="2" HorizontalAlignment="Left" Margin="5,0,0,0" Click="btnSearchClick"/>
+                    </Grid>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Margin="0,23,0,0" Grid.ColumnSpan="3">
+                <ListView x:Name="weatherListView" Loaded="OnListViewLoaded" VirtualizingStackPanel.IsVirtualizing="False">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Waktu" DisplayMemberBinding="{Binding Time}" Width="Auto"/>
+                            <GridViewColumn Header="Cuaca" DisplayMemberBinding="{Binding Category}" Width="Auto"/>
+                            <GridViewColumn Header="Kelembaban" DisplayMemberBinding="{Binding Humidity}" Width="Auto"/>
+                            <GridViewColumn Header="Suhu Celcius" DisplayMemberBinding="{Binding TempC}" Width="Auto"/>
+                            <GridViewColumn Header="Suhu Fahrenheit" DisplayMemberBinding="{Binding TempF}" Width="Auto"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
             </StackPanel>
         </StackPanel>
         <Grid Grid.Column="2" Grid.Row="0" VerticalAlignment="Top" Margin="0,67,0,0">
@@ -41,17 +76,17 @@
                 <RowDefinition Height="61*"/>
                 <RowDefinition Height="13*"/>
             </Grid.RowDefinitions>
-            <Image Source="/Assets/weatherIcon.png" Width="75" Height="74" VerticalAlignment="Top" Margin="1,0,24,0" Grid.RowSpan="2" />
+            <Image Source="/Assets/weatherIcon.png" Width="75" Height="74" VerticalAlignment="Top" Margin="1,38,24,0" Grid.RowSpan="2" />
         </Grid>
-        <StackPanel Grid.Row="0" Background="#80FFFFFF" Margin="50,202,50,66" Grid.ColumnSpan="3">
+        <StackPanel Grid.Row="0" Background="#80FFFFFF" Margin="10,240,10,56" Grid.ColumnSpan="3">
             <TextBlock Text="Newest Earthquake Information" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="Black" Margin="0,0,0,10"/>
 
-            <TextBlock x:Name="tanggalTextBlock" FontSize="12" FontWeight="Bold" Margin="0,0,0,5"/>
-            <TextBlock x:Name="jamTextBlock" FontSize="12" FontWeight="Bold" Margin="0,0,0,5"/>
-            <TextBlock x:Name="magnitudeTextBlock" FontSize="12" FontWeight="Bold" Margin="0,0,0,5"/>
-            <TextBlock x:Name="kedalamanTextBlock" FontSize="12" FontWeight="Bold" Margin="0,0,0,5"/>
-            <TextBlock x:Name="wilayahTextBlock" FontSize="12" FontWeight="Bold" Margin="0,0,0,5"/>
-            <TextBlock x:Name="potensiTextBlock" FontSize="12" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBlock x:Name="tanggalTextBlock" FontSize="10" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBlock x:Name="jamTextBlock" FontSize="10" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBlock x:Name="magnitudeTextBlock" FontSize="10" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBlock x:Name="kedalamanTextBlock" FontSize="10" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBlock x:Name="wilayahTextBlock" FontSize="10" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBlock x:Name="potensiTextBlock" FontSize="10" FontWeight="Bold" Margin="0,0,0,5"/>
         </StackPanel>
         <StackPanel VerticalAlignment="Bottom" Background="LightGray" Grid.ColumnSpan="3" Margin="0,0,0,31" Height="20">
             <UniformGrid Columns="4" HorizontalAlignment="Stretch" >
