@@ -58,7 +58,7 @@ namespace SafeDisaster.Class
 
         public static List<Disaster> GetDisasterList()
         {
-            List<Disaster> returnList = new List<Disaster>();
+            List<Disaster> disasterList = new List<Disaster>();
             var client = new RestClient("https://data.bmkg.go.id/DataMKG/TEWS/gempaterkini.json");
             var request = new RestRequest(Method.GET);
 
@@ -66,18 +66,15 @@ namespace SafeDisaster.Class
             {
                 IRestResponse response = client.Execute(request);
 
-                // Periksa apakah permintaan HTTP berhasil
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     JsonObject obj = (JsonObject)SimpleJson.DeserializeObject(response.Content);
                     JsonObject gempaObj = (JsonObject)obj["Infogempa"];
 
-                    // Pastikan obj["gempa"] ada dan merupakan array
                     if (gempaObj.ContainsKey("gempa") && gempaObj["gempa"] is JsonArray disasterListArray)
                     {
                         foreach (JsonObject disasterJson in disasterListArray)
                         {
-                            // Ubah JsonObject menjadi objek Disaster
                             Disaster disaster = new Disaster(
                                 Convert.ToString(disasterJson.TryGetValue("Tanggal", out var tanggal) ? tanggal : ""),
                                 Convert.ToString(disasterJson.TryGetValue("Jam", out var jam) ? jam : ""),
@@ -87,29 +84,26 @@ namespace SafeDisaster.Class
                                 Convert.ToString(disasterJson.TryGetValue("Potensi", out var potensi) ? potensi : "")
                             );
 
-                            returnList.Add(disaster);
+                            disasterList.Add(disaster);
                         }
                     }
                     else
                     {
-                        returnList.Add(new Disaster("Error", "Error", "Error", "Error", "Error", "Error"));
+                        disasterList.Add(new Disaster("Error", "Error", "Error", "Error", "Error", "Error"));
                     }
                 }
                 else
                 {
-                    // Tanggapi jika permintaan HTTP tidak berhasil
-                    // Dalam kasus ini, Anda bisa menambahkan objek Disaster dengan nilai default atau null ke dalam koleksi
-                    returnList.Add(new Disaster($"Error: Kode status HTTP {response.StatusCode}", "", "", "", "", ""));
+                    disasterList.Add(new Disaster($"Error: Kode status HTTP {response.StatusCode}", "", "", "", "", ""));
                 }
             }
             catch (Exception ex)
             {
-                // Tanggapi jika terjadi kesalahan lainnya
-                // Dalam kasus ini, Anda bisa menambahkan objek Disaster dengan nilai default atau null ke dalam koleksi
-                returnList.Add(new Disaster($"Error: {ex.Message}", "", "", "", "", ""));
+
+                disasterList.Add(new Disaster($"Error: {ex.Message}", "", "", "", "", ""));
             }
 
-            return returnList;
+            return disasterList;
         }
         public static Disaster GetNewestDisaster()
         {
@@ -120,7 +114,6 @@ namespace SafeDisaster.Class
             {
                 IRestResponse response = client.Execute(request);
 
-                // Periksa apakah permintaan HTTP berhasil
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     JsonObject obj = (JsonObject)SimpleJson.DeserializeObject(response.Content);
@@ -128,7 +121,6 @@ namespace SafeDisaster.Class
                     JsonObject gempaObj = (JsonObject)infoGempaObj["gempa"];
 
 
-                    // Mengambil data dari JSON dan membuat objek Disaster
                     Disaster newestDisaster = new Disaster(
                         Convert.ToString(gempaObj.TryGetValue("Tanggal", out var tanggalObj) ? tanggalObj : ""),
                         Convert.ToString(gempaObj.TryGetValue("Jam", out var jamObj) ? jamObj : ""),
@@ -141,16 +133,12 @@ namespace SafeDisaster.Class
                     return newestDisaster;
                 }
                 else
-                {
-                    // Tanggapi jika permintaan HTTP tidak berhasil
-                    // Dalam kasus ini, Anda bisa menambahkan objek Disaster dengan nilai default atau null
+                { 
                     return new Disaster("Error", "Error", "Error", "Error", "Error", "Error");
                 }
             }
             catch (Exception ex)
             {
-                // Tanggapi jika terjadi kesalahan lainnya
-                // Dalam kasus ini, Anda bisa menambahkan objek Disaster dengan nilai default atau null
                 return new Disaster($"Error: {ex.Message}", "", "", "", "", "");
             }
         }
