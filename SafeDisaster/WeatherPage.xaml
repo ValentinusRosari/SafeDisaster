@@ -22,51 +22,55 @@
         </Grid.RowDefinitions>
 
 
-        <StackPanel Margin="10,288,10,16" Grid.ColumnSpan="3">
-            <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Background="#80FFFFFF" Height="74" Margin="10,37,10,0" Grid.Column="1" Width="275" HorizontalAlignment="Right">
-                <TextBlock Text="Weather: Sunny" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
-                <TextBlock Text="Humidity: 63% " VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
-                <TextBlock Text="Wind Velocity: 20 km/h" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
-                <TextBlock Text="Last Updated: 10 September 2023, 09:00:00" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
-            </StackPanel>
-            <Grid Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" Margin="0,81,0,0">
-                <TextBlock Text="25°C" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="4,-148,0,0"  FontWeight="Bold" FontSize="40" Height="109"/>
-            </Grid>
-        </StackPanel>
-
-
         <StackPanel Grid.Row="0" VerticalAlignment="Top" Background="Transparent" Grid.ColumnSpan="3" Height="30">
             <StackPanel Margin="5">
-                <TextBlock Text="Weather" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0" FontFamily="./Fonts/#Poppins-Regular"/>
+                <TextBlock Text="Weather Forecast" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0" FontFamily="./Fonts/#Poppins-Regular"/>
             </StackPanel>
         </StackPanel>
-        <StackPanel Margin="10,0,10,304" Grid.ColumnSpan="3">
-            <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Background="#80FFFFFF" Height="74" Margin="10,37,10,0" Grid.Column="1" Width="275" HorizontalAlignment="Right">
-                <TextBlock Text="Weather: Sunny" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
-                <TextBlock Text="Humidity: 55% " VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
-                <TextBlock Text="Wind Velocity: 20 km/h" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
-                <TextBlock Text="Last Updated: 10 September 2023, 12:00:00" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
-            </StackPanel>
-            <Grid Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" Margin="0,81,0,0">
-                <TextBlock Text="30°C" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="4,-148,0,0"  FontWeight="Bold" FontSize="40" Height="109"/>
-            </Grid>
-        </StackPanel>
-        <StackPanel Margin="10,96,10,208" Grid.ColumnSpan="3">
-            <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Background="#80FFFFFF" Height="74" Margin="10,37,10,0" Grid.Column="1" Width="275" HorizontalAlignment="Right">
-                <TextBlock Text="Weather: Sunny" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
-                <TextBlock Text="Humidity: 60% " VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
-                <TextBlock Text="Wind Velocity: 22 km/h" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
-                <TextBlock Text="Last Updated: 10 September 2023, 11:00:00" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
-            </StackPanel>
-            <Grid Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" Margin="0,81,0,0">
+
+        <StackPanel Margin="6,34,10,-21" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <TextBlock Text="Masukan kota" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" Foreground="Black" Margin="3 0 0 0" FontFamily="./Fonts/#Poppins-Regular"/>
+            <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="5*"/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="32*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="27°C" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="4,-148,0,0"  FontWeight="Bold" FontSize="40" Height="109" Grid.ColumnSpan="3"/>
+
+                <ComboBox HorizontalAlignment="Left" Name="cmbLocation" Width="130" IsEditable="True" IsTextSearchEnabled="True" StaysOpenOnEdit="True" DropDownOpened="cmbLocation_DropDownOpened">
+                    <ComboBox.Template>
+                        <ControlTemplate TargetType="ComboBox">
+                            <TextBox x:Name="PART_EditableTextBox"
+                     Text="{Binding Path=Text, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     IsReadOnly="{TemplateBinding IsReadOnly}"
+                     AcceptsReturn="True"
+                     Focusable="True"
+                     Background="{TemplateBinding Background}"
+                     Foreground="{TemplateBinding Foreground}"
+                     />
+                        </ControlTemplate>
+                    </ComboBox.Template>
+                </ComboBox>
+                <Button Content="Search" Height="18" Width="45" Grid.Column="1" HorizontalAlignment="Left" Margin="5,0,0,0" Click="btnSearchClick"/>
             </Grid>
         </StackPanel>
+
+
+
+        <StackPanel Margin="0,75,0,0" Grid.ColumnSpan="3">
+            <ListView x:Name="weatherListView" Loaded="OnListViewLoaded" VirtualizingStackPanel.IsVirtualizing="False">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Waktu" DisplayMemberBinding="{Binding Time}" Width="Auto"/>
+                        <GridViewColumn Header="Cuaca" DisplayMemberBinding="{Binding Category}" Width="Auto"/>
+                        <GridViewColumn Header="Kelembaban" DisplayMemberBinding="{Binding Humidity}" Width="Auto"/>
+                        <GridViewColumn Header="Suhu Celcius" DisplayMemberBinding="{Binding TempC}" Width="Auto"/>
+                        <GridViewColumn Header="Suhu Fahrenheit" DisplayMemberBinding="{Binding TempF}" Width="Auto"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+
+
 
         <StackPanel VerticalAlignment="Bottom" Background="LightGray" Grid.ColumnSpan="3" Margin="0,0,0,31" Height="20">
             <UniformGrid Columns="4" HorizontalAlignment="Stretch" >
@@ -76,20 +80,6 @@
                 <Button Content="Weather" HorizontalAlignment="Center" Foreground="DeepSkyBlue" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" FontSize="15"/>
             </UniformGrid>
         </StackPanel>
-        <StackPanel Margin="10,192,10,112" Grid.ColumnSpan="3">
-            <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Background="#80FFFFFF" Height="74" Margin="10,37,10,0" Grid.Column="1" Width="275" HorizontalAlignment="Right">
-                <TextBlock Text="Weather: Sunny" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
-                <TextBlock Text="Humidity: 62% " VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
-                <TextBlock Text="Wind Velocity: 20 km/h" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
-                <TextBlock Text="Last Updated: 10 September 2023, 10:00:00" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" Foreground="Black" Margin="0 0 0 0"/>
-            </StackPanel>
-            <Grid Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" Margin="0,81,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="75*"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Text="26°C" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="4,-148,0,0"  FontWeight="Bold" FontSize="40" Height="109"/>
-            </Grid>
-        </StackPanel>
+
     </Grid>
 </Window>
