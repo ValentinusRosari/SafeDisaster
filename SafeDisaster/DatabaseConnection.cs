@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Npgsql;
 
 namespace SafeDisaster
@@ -10,7 +6,7 @@ namespace SafeDisaster
     internal class DatabaseConnection
     {
         private static NpgsqlConnection connection;
-        private static string connectionString = "Host=localhost;Username=postgres;Password=duta2711;Database=JunPro";
+        private static string connectionString = "Host=satao.db.elephantsql.com;Username=tkvnzpuk;Password=G_Zc4JDnbiG3J_ZdUFkk64O5BQv4dQBb;Database=tkvnzpuk";
 
         static DatabaseConnection()
         {
@@ -52,6 +48,7 @@ namespace SafeDisaster
             }
         }
 
+        // You can add a method to execute a query if needed
         public static NpgsqlDataReader ExecuteQuery(string query)
         {
             NpgsqlCommand command = new NpgsqlCommand(query, connection);

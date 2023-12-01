@@ -81,12 +81,12 @@
         <StackPanel Grid.Row="0" Background="#80FFFFFF" Margin="10,240,10,56" Grid.ColumnSpan="3">
             <TextBlock Text="Newest Earthquake Information" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="Black" Margin="0,0,0,10"/>
 
-            <TextBlock x:Name="tanggalTextBlock" FontSize="10" FontWeight="Bold" Margin="0,0,0,5"/>
-            <TextBlock x:Name="jamTextBlock" FontSize="10" FontWeight="Bold" Margin="0,0,0,5"/>
-            <TextBlock x:Name="magnitudeTextBlock" FontSize="10" FontWeight="Bold" Margin="0,0,0,5"/>
-            <TextBlock x:Name="kedalamanTextBlock" FontSize="10" FontWeight="Bold" Margin="0,0,0,5"/>
-            <TextBlock x:Name="wilayahTextBlock" FontSize="10" FontWeight="Bold" Margin="0,0,0,5"/>
-            <TextBlock x:Name="potensiTextBlock" FontSize="10" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBlock x:Name="tanggalTextBlock" FontSize="10" Margin="0,0,0,5"/>
+            <TextBlock x:Name="jamTextBlock" FontSize="10"  Margin="0,0,0,5"/>
+            <TextBlock x:Name="magnitudeTextBlock" FontSize="10" Margin="0,0,0,5"/>
+            <TextBlock x:Name="kedalamanTextBlock" FontSize="10" Margin="0,0,0,5"/>
+            <TextBlock x:Name="wilayahTextBlock" FontSize="10" Margin="0,0,0,5"/>
+            <TextBlock x:Name="potensiTextBlock" FontSize="10" Margin="0,0,0,5"/>
         </StackPanel>
         <StackPanel VerticalAlignment="Bottom" Background="LightGray" Grid.ColumnSpan="3" Margin="0,0,0,31" Height="20">
             <UniformGrid Columns="4" HorizontalAlignment="Stretch" >
