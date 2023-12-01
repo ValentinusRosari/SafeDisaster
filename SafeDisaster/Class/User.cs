@@ -107,9 +107,9 @@ namespace SafeDisaster.Class
                 if ((int)command.ExecuteScalar() == 1)
                 {
                     MessageBox.Show("Register Success");
-                    DashboardPage dashboardPage = new DashboardPage();
+                    LoginPage loginPage = new LoginPage();
                     window.Close();
-                    dashboardPage.Show();
+                    loginPage.Show();
                 }
                 else
                 {
