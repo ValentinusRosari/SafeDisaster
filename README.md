@@ -17,7 +17,7 @@ Anggota 2: Zildiray Alfirli - 21/482759/TK/53363
 
 ## API used
 - Importer Data Prakiraan Cuaca BMKG: https://ibnux.github.io/BMKG-importer/#pakai-langsung
-- Data Gempabumi Terbuka BMKG: https://ibnux.github.io/BMKG-importer/#pakai-langsung
+- Data Gempabumi Terbuka BMKG: https://data.bmkg.go.id/gempabumi/
 
 ## How to run the app
 1. Download the zip file
